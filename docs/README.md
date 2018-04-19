@@ -7,7 +7,7 @@ However, the downside of this capability is the generation of vast quantities of
 ### What can EmbryoCV do?
 Biological development is complex and dynamic. EmbryoCV has been designed to capture as much of this complexity as possible in the form of biologically relevant measures. These measurements form a powerful phenome-level dataset and owing to the capacity of OpenVIM to record many hundred embryos simultaneously, whilst simultaneously controlling the embryonic environment, these responses can be quantified in large numbers of aquatic embryos and in different environmental conditions.
 
-[Scrolling data gif] (assets/embryocvScrollingData.gif)
+[Scrolling data gif] (assets/embryocvScrollingData_cropped.gif)
 
 <img src="assets/embryocvScrollingData.gif" align = "right" width="400" height="250" />
 ### How do I use EmbryoCV?
