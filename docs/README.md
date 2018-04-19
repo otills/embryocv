@@ -15,12 +15,11 @@ However, the downside of this capability is the generation of vast quantities of
 
 ### What can EmbryoCV do?
 
-<img src="assets/datasetStructure.png" align = "left" width="350"/>
+<img src="assets/embryocvScrollingData_cropped.gif" align = "right" width="400" height="250" />
 
 Biological development is complex and dynamic and EmbryoCV has been designed to capture as much of this complexity as possible in the form of biologically relevant measures. These measurements form a powerful phenome-level dataset and owing to the capacity of OpenVIM to record many hundred embryos simultaneously, whilst also controlling the embryonic environment, these responses can be quantified in large numbers of aquatic embryos and in different environmental conditions.
 
 EmbryoCV attempts to extract data on embryo size, shape, position and physiology from every frame for every embryo and these measures are integrated to form a multi-dimensional biologicaly relevant dataset.
-
 
 * Size
 * Shape
@@ -28,6 +27,8 @@ EmbryoCV attempts to extract data on embryo size, shape, position and physiology
 * Function
 * Movement rates
 * Physiological rates 
+
+<img src="assets/datasetStructure.png" align = "left" width="350"/>
 
 The final output of EmbryoCV is an XArray HDF5 dataset for each embryo. This is dynamically callable and can be used for focussed analysis downstream. Owing to the excellent capabilities of XArray, Pandas and Python in general the analysis and mining of the vast datsets produced by EmbryoCV are easily acheived. Alternatively export of data in more familiar formats such as csv are simply a command in the EmbryoCV workflow.
 
@@ -43,7 +44,7 @@ Python is platform independant and so EmbryoCV, although only tested on MacOS, s
 
 
 
-<img src="assets/embryocvScrollingData_cropped.gif" align = "right" width="400" height="250" />
+
 ### How do I use EmbryoCV?
 
 
