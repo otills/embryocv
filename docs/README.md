@@ -1,6 +1,5 @@
 
-## EmbryoCV is an open-source Python package for the analysis of video describing embryonic development {style="text-align:center"}
-
+## EmbryoCV is an open-source Python package for the analysis of video describing embryonic development 
 
 
 <img src="assets/singleRadix_FF.gif" align = "right" width="300" height = "180"/>
