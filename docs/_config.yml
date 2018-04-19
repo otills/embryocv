@@ -1,5 +1,3 @@
-gem "github-pages", group: :jekyll_plugins
-remote_theme: "mmistakes/minimal-mistakes"
+theme: jekyll-theme-tactile
 title: EmbryoCV
 description: A Python package for quantifying embryonic development
-minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise
