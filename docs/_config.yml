@@ -1,3 +1,3 @@
-theme: jekyll-theme-slate
+theme: remote_theme:daattali/beautiful-jekyll
 title: EmbryoCV
 description: A Python package for quantifying embryonic development
