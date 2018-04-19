@@ -1,6 +1,7 @@
 
-### What is EmbryoCV?
+# EmbryoCV?
 
+### What is EmbryoCV?
 
 <img src="assets/singleRadix_FF.gif" align = "right" width="270" height = "180"/>
 EmbryoCV is a Python package developed by a team of scientists to quantify different biological aspects of developing organisms from video datasets. It forms part of the embryo-phenomics platform www.embryophenomics.org - a combination of open-source hardware and software for high-throughput and high-resolution quantification of aquatic embryos. 
