@@ -1,5 +1,5 @@
 
-<p align="center"> ## EmbryoCV is an open-source Python package for the analysis of video describing embryonic development </>
+## EmbryoCV is an open-source Python package for the analysis of video describing embryonic development {style="text-align:center"}
 
 
 
