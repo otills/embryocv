@@ -1,8 +1,8 @@
 
-## EmbryoCV - A Python package for quantifying embryonic development 
+## What is EmbryoCV?
 
 
-<img src="assets/singleRadix_FF.gif" align = "right" width="300" height = "180"/>
+<img src="assets/singleRadix_FF.gif" align = "right" width="270" height = "180"/>
 EmbryoCV is a Python package developed by a team of scientists to quantify different biological aspects of developing organisms from video datasets. It forms part of the embryo-phenomics platform www.embryophenomics.org - a combination of open-source hardware and software for high-throughput and high-resolution quantification of aquatic embryos. 
 
 
@@ -18,28 +18,33 @@ However, the downside of this capability is the generation of vast quantities of
 <img src="assets/datasetStructure.png" align = "left" width="400"/>
 
 Biological development is complex and dynamic and EmbryoCV has been designed to capture as much of this complexity as possible in the form of biologically relevant measures. These measurements form a powerful phenome-level dataset and owing to the capacity of OpenVIM to record many hundred embryos simultaneously, whilst also controlling the embryonic environment, these responses can be quantified in large numbers of aquatic embryos and in different environmental conditions.
-EmbryoCV
 
+EmbryoCV attempts to extract data on embryo size, shape, position and physiology from every frame for every embryo and these measures are integrated to form a multi-dimensional biologicaly relevant dataset.
 
-### How do I use EmbryoCV?
-Biological development is complex and dynamic. EmbryoCV has been designed to capture as much of this complexity as possible in the form of biologically relevant measures. These measurements form a powerful phenome-level dataset and owing to the capacity of OpenVIM to record many hundred embryos simultaneously, whilst simultaneously controlling the embryonic environment, these responses can be quantified in large numbers of aquatic embryos and in different environmental conditions.
-
-
-
-EmbryoCV attempts to extract data on embryo size, shape, position and physiology from every frame for every embryo and these measures are integrated to form a multi-dimensional biologicaly relevant dataset. Owing to t
 * Size
 * Shape
 * Position
 * Function
-
 * Movement rates
 * Physiological rates 
 
-<img src="assets/embryocvScrollingData_cropped.gif" align = "right" width="400" height="250" />
+The final output of EmbryoCV is an XArray HDF5 dataset for each embryo. This is dynamically callable and can be used for focussed analysis downstream. Owing to the excellent capabilities of XArray, Pandas and Python in general the analysis and mining of the vast datsets produced by EmbryoCV are easily acheived. Alternatively export of data in more familiar formats such as csv are simply a command in the EmbryoCV workflow.
+
+
 ### How do I use EmbryoCV?
 EmbryoCV is intentionally simple to use, consisting of a small number of user callable functions. A user begins by setting up an 'instance' of EmbryoCV for their analysis. They must provide EmbryoCV the ...
 ..
 ..
+
+Python is platform independant and so EmbryoCV, although only tested on MacOS, should run on any system given that Python is supported on Windows and Linux. EmbryoCV has a number of dependencies including OpenCV (image analysis), Pandas (data storage and processing), Numpy (numerical), SciKit (various), XArray (high-dimensional data storage), Matplotlib (visualisation), pyqtgraph (UI). EmbryoCV has been designed to run interactively using IPython - allowing users to dynamically query the outputs of particular functions during their analysis. More detailed information on setting up EmbryoCV on your system is available here. If users encounter issues they are encouraged to use the Google Group [embryo-phenomics Google Group]("https://groups.google.com/forum/#!forum/embryo-phenomics")
+
+
+
+
+
+<img src="assets/embryocvScrollingData_cropped.gif" align = "right" width="400" height="250" />
+### How do I use EmbryoCV?
+
 
 
 ### How is EmbryoCV structured?
