@@ -9,7 +9,7 @@ Biological development is complex and dynamic. EmbryoCV has been designed to cap
 
 [Scrolling data gif] (assets/embryocvScrollingData.gif)
 
-<img src="assets/embryocvScrollingData.gif" width="40" height="40" />
+<img src="assets/embryocvScrollingData.gif" width="200" height="100" />
 ### How do I use EmbryoCV?
 EmbryoCV is intentionally simple to use, consisting of a small number of user callable functions. A user begins by setting up an 'instance' of EmbryoCV for their analysis. They must provide EmbryoCV the ...
 ..
