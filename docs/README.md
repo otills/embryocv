@@ -38,7 +38,7 @@ Python is platform independant and so EmbryoCV, although only tested on MacOS, s
 
 EmbryoCV is intentionally simple to use, consisting of a small number of user callable functions. It has been developed to work with Micro-Manager datasets acquired as multiple image sequences of a number of embryos acquired over prolonged periods. The acquisition of such an image dataset is easily acheived using MicroManager and the process is described on the [OpenVIM](http://www.openVIM.org "OpenVIM homepage") site. 
 
-<img src="assets/imageAcquisitionStructure.png" align = "right" width="250"/>
+<img src="assets/imageAcquisitionStructure.png" align = "right" width="300"/>
 
 Once a user has acquired such a dataset they can begin the analysis using EmbryoCV. EmbryoCV has been tested and optimised to work with two species Radix balthica - a freshwater gastropod and Orchestia gammarellus - a marine amphipod. However, EmbryoCV is easily extendible to different species and much of the functionality is intentionally species-independant. 
 
@@ -71,13 +71,15 @@ analysis.savePhenomeMeasuresForAllEmbryos('pathToSave')
 # pathToSave = User provided path to save XArray results files to
 ```
 
+<img src="assets/radixbalthicaHR.png" align = "right" width="400"/>
+
 In addition to a change in the results files format and structure, this stage ```savePhenomeMeasuresForAllEmbryos``` also incoporates the important stage of blockwise frequency quantification. This is species-independant and faciliates many options for mining, quantification or classification of embryonic responses.
 
 From this stage onwards EmbryoCV sees more focussed analyses targeted at quantifying particular traits or responses such as heart rate or classification of lethal end points. 
 
 To quantify heart rate, the following scripts can be used. Output for all embryos is stored in a .npy file at the location savePath, together with a PDF summary for each embryo describing the model fitting. The ontogeny of heart function in Radix balthica follows a segmented relationship and consequently a segmented model is fitted, whereas for Orchestia gammarellus a linear model is used. 
 
-<img src="assets/radixbalthicaHR.png" align = "right" width="300"/>
+
 
 
 ``` 
