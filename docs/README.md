@@ -34,17 +34,23 @@ The final output of EmbryoCV is an XArray HDF5 dataset for each embryo. This is 
 
 
 ### How do I use EmbryoCV?
-EmbryoCV is intentionally simple to use, consisting of a small number of user callable functions. A user begins by setting up an 'instance' of EmbryoCV for their analysis. They must provide EmbryoCV the ...
-..
-..
+EmbryoCV is intentionally simple to use, consisting of a small number of user callable functions. It has been developed to work with Micro-Manager datasets acquired as multiple image sequences of a number of embryos acquired over prolonged periods. The acquisition of such an image dataset is easily acheived using MicroManager and the process is described on the [OpenVIM](http://www.openVIM.org "OpenVIM homepage") site. 
+
+Once a user has acquired such a dataset they can begin the analysis using EmbryoCV. EmbryoCV has been tested and optimised to work with two species Radix balthica - a freshwater gastropod and Orchestia gammarellus - a marine amphipod. However, EmbryoCV is easily extendible to different species and much of the functionality is intentionally species-independant. 
+
+A user begins by setting up an 'instance' of EmbryoCV for their analysis. They must provide EmbryoCV the parent folder in which 
+
+analysis = embryoPhenomics.embryoPhenomics(‘pathToFiles','new',scale)
+analysis.validateEggs()
+analysis.quantifyAllEmbryos()
+analysis.savePhenomeMeasuresForAllEmbryos('path’)
 
 Python is platform independant and so EmbryoCV, although only tested on MacOS, should run on any system. EmbryoCV has a number of dependencies including OpenCV (image analysis), Pandas (data storage and processing), Numpy (numerical), SciKit (various), XArray (high-dimensional data storage), Matplotlib (visualisation), pyqtgraph (UI). EmbryoCV has been designed to run interactively using IPython - allowing users to dynamically query the outputs of particular functions during their analysis. More detailed information on setting up EmbryoCV on your system is available here. If users encounter issues they are encouraged to use the Google Group [embryo-phenomics Google Group](http://groups.google.com/forum/#!forum/embryo-phenomics "Embryo-phenomics user group")
 
 
 
-
 ### How is EmbryoCV structured?
-EmbryoCV has a modular internal structure, consisting of the modules dataHandling, imageAnalysis, eggUI, dataIntegration, dataAnalysis and the parent module EmbryoCV. However, this complexity is irrelevant to the user [More detailed information on the structure of EmbryoCV](programStructure.md)
+EmbryoCV has a modular internal structure, consisting of the modules dataHandling, imageAnalysis, eggUI, dataIntegration, dataAnalysis and the parent module EmbryoCV. However, this complexity is irrelevant to users unless they are looking to customise or develop EmbryoCV [More detailed information on the structure of EmbryoCV](programStructure.md).
 
 
 
