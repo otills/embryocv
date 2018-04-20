@@ -44,6 +44,7 @@ Once a user has acquired such a dataset they can begin the analysis using Embryo
 
 A user begins by setting up an 'instance' of EmbryoCV for their analysis. They must provide EmbryoCV the parent folder in which 
 ```
+analysis = embryoPhenomics.embryoPhenomics('parentPath','mode','scale','exclude''species' dataFormat')
 # parentPath = path to folder containing image dataset (Expt_1) in figure.
 # mode = stage of analysis, either 'new' (a new analysis), 'resume' (restart an analysis), 'results' (load an experiment without the original image dataset - just using a set of Pandas results files) or 'xarray'(load an experiment using just the final output XArray datasets).
 # scale = number of um per pixel.
@@ -51,7 +52,6 @@ A user begins by setting up an 'instance' of EmbryoCV for their analysis. They m
 # species = the species used. Currently 'rbathica' or 'orgammarellus' supported.
 # dataFormat = is the dataformat normal. By default this is True. This offers the potential to work with image datasets structured differently.
 
-analysis = embryoPhenomics.embryoPhenomics('parentPath','mode','scale','exclude''species' dataFormat')
 ```
 
 If a user is initiating a 'new' experiment EmbryoCV will mine the imagedataset and both generate and save a results structure using information from the metadata of each image sequence, for each embryo. At this stage EmbryoCV also attempts to locate the embryo and the validateEggs function can be used to validate this. The user can visualise the ROIs for each image sequence and manually modify these if required. By default EmbryoCV locates the egg in just the first image of each image sequence and this is tranferred to all frames of the sequence. 
@@ -67,8 +67,8 @@ analysis.quantifyAllEmbryos()
 Upto this stage of an analysis data are stored as a Pandas Data Panel for each embryo stored to disk via Pickle. This results format is stored in a ```phenomeData``` folder stored in the parentPath with the image dataset. However, accessing such data is slow and therefore the next stage of the analysis ```savePhenomeMeasuresForAllEmbryos``` incoporates the results files transferred to a more powerful and extendible structure and format using the XArray package. Another advangtage is that results can be called dynamically i.e. they do not be loaded by the user to access and query them. It is not uncommon for the results file for a single embryo to be many GB and therefore this optimisation is important for effective downstream processing and analysis. At this stage owing to the design of the EmbryoCV workflow it is no longer necessary to have the image dataset to proceed with the analysis. ```savePhenomeMeasuresForAllEmbryos``` sees the results files stored in a user defined location and the subsequent analytical steps do not require the image dataset.
 
 ```
-# User provided path to save XArray results files to
 analysis.savePhenomeMeasuresForAllEmbryos('pathToSave')
+# pathToSave = User provided path to save XArray results files to
 ```
 
 In addition to a change in the results files format and structure, this stage ```savePhenomeMeasuresForAllEmbryos``` also incoporates the important stage of blockwise frequency quantification. This is species-independant and faciliates many options for mining, quantification or classification of embryonic responses.
@@ -76,9 +76,9 @@ In addition to a change in the results files format and structure, this stage ``
 From this stage onwards EmbryoCV sees more focussed analyses targeted at quantifying particular traits or responses such as heart rate or classification of lethal end points. 
 
 ``` 
-#
-analysis.measureHeartRateForAllEmbryos()
-analysis.measureHeartRateForSpecificEmbryos()
+analysis.measureHeartRateForAllEmbryos(savePath)
+analysis.measureHeartRateForSpecificEmbryos(embryos,savePath)
+# The measureHeartRate functions incorporate a large number of tunable parameters to optimise model fitting. See manual for more detail.
 ```
 
 
