@@ -59,7 +59,10 @@ If a user is initiating a 'new' experiment EmbryoCV will mine the imagedataset a
 analysis.validateEggs()
 ```
 
-Quantification of embryo physiology, position and shape is primarily performed during the quantifyAllEmbryos function which by default incorporates parallel processing. The process is partly species-dependant. For example 'rbalthica' is very mobile within its egg capsule and its size, shape and position can be quantified precisely. However, 'ogammarellus' fills its egg capsule and therefore some comparable measures are not posible. The blockwise frequency function however is the same and this underpins much of the downstream processes including quantificaiton of physiological rates and quantification of embryo health, among other measures. 
+Quantification of embryo physiology, position and shape is primarily performed during the quantifyAllEmbryos function which by default incorporates parallel processing. The process is partly species-dependant. For example 'rbalthica' is very mobile within its egg capsule and its size, shape and position can be quantified precisely. However, 'ogammarellus' fills its egg capsule and therefore some comparable measures are not posible. The blockwise frequency function however is the same (see figure) and this underpins much of the downstream processes including quantificaiton of physiological rates and quantification of embryo health, among other measures. 
+
+<img src="assets/blockwise.png" align = "right" height = 50/>
+
 ```
 analysis.quantifyAllEmbryos()
 ```
@@ -71,15 +74,11 @@ analysis.savePhenomeMeasuresForAllEmbryos('pathToSave')
 # pathToSave = User provided path to save XArray results files to
 ```
 
-<img src="assets/radixbalthicaHR.png" align = "right" width="400"/>
-
 In addition to a change in the results files format and structure, this stage ```savePhenomeMeasuresForAllEmbryos``` also incoporates the important stage of blockwise frequency quantification. This is species-independant and faciliates many options for mining, quantification or classification of embryonic responses.
 
 From this stage onwards EmbryoCV sees more focussed analyses targeted at quantifying particular traits or responses such as heart rate or classification of lethal end points. 
 
-To quantify heart rate, the following scripts can be used. Output for all embryos is stored in a .npy file at the location savePath, together with a PDF summary for each embryo describing the model fitting. The ontogeny of heart function in Radix balthica follows a segmented relationship and consequently a segmented model is fitted, whereas for Orchestia gammarellus a linear model is used. 
-
-
+To quantify heart rate, the following scripts can be used. Output for all embryos is stored in a hrdata.npy file at the location savePath, together with a PDF summary for each embryo describing the model fitting. The ontogeny of heart function in Radix balthica follows a segmented relationship and consequently a segmented model is fitted, whereas for Orchestia gammarellus a linear model is used. See below for an example of the model output for Radix balthica. If the user finds the model fit suboptimal they can use the customisable parameters to refine either for all embryos or just for specific embryos. Any changes are then saved to the hrdata.npy results file.
 
 
 ``` 
@@ -87,6 +86,8 @@ analysis.measureHeartRateForAllEmbryos(savePath)
 analysis.measureHeartRateForSpecificEmbryos(embryos,savePath)
 # The measureHeartRate functions incorporate a large number of tunable parameters to optimise model fitting. See manual for more detail.
 ```
+
+<img src="assets/radixbalthicaHR.png" align = "right" width="350"/>
 
 
 ### How is EmbryoCV structured?
