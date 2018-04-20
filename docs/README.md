@@ -36,12 +36,35 @@ The final output of EmbryoCV is an XArray HDF5 dataset for each embryo. This is 
 ### How do I use EmbryoCV?
 EmbryoCV is intentionally simple to use, consisting of a small number of user callable functions. It has been developed to work with Micro-Manager datasets acquired as multiple image sequences of a number of embryos acquired over prolonged periods. The acquisition of such an image dataset is easily acheived using MicroManager and the process is described on the [OpenVIM](http://www.openVIM.org "OpenVIM homepage") site. 
 
+<img src="assets/imageAcquisitionStructure.png" align = "right" width="250"/>
+
 Once a user has acquired such a dataset they can begin the analysis using EmbryoCV. EmbryoCV has been tested and optimised to work with two species Radix balthica - a freshwater gastropod and Orchestia gammarellus - a marine amphipod. However, EmbryoCV is easily extendible to different species and much of the functionality is intentionally species-independant. 
 
 A user begins by setting up an 'instance' of EmbryoCV for their analysis. They must provide EmbryoCV the parent folder in which 
+```
+analysis = embryoPhenomics.embryoPhenomics('parentPath','mode','scale','exclude''species' dataFormat')
 
-analysis = embryoPhenomics.embryoPhenomics(‘pathToFiles','new',scale)
+# parentPath = path to folder containing image dataset (Expt_1) in figure.
+# mode = stage of analysis, either 'new' (a new analysis), 'resume' (restart an analysis), 'results' (load an experiment without the original image dataset - just using a set of Pandas results files) or 'xarray'(load an experiment using just the final output XArray datasets).
+# scale = number of um per pixel.
+# exclude = a list of user provided embryos to exclude from an analysis. e.g. exclude = 'A1' or exclude = ['A1,'A4',B8'].
+# species = the species used. Currently 'rbathica' or 'orgammarellus' supported.
+# dataFormat = is the dataformat normal. By default this is True. This offers the potential to work with image datasets structured differently.
+
+```
+
+If a user is initiating a 'new' experiment EmbryoCV will mine the imagedataset and both generate and save a results structure using information from the metadata of each image sequence, for each embryo. At this stage EmbryoCV also attempts to locate the embryo and the validateEggs function can be used to validate this. The user can visualise the ROIs for each image sequence and manually modify these if required. By default EmbryoCV locates the egg in just the first image of each image sequence and this is tranferred to all frames of the sequence. 
+```
 analysis.validateEggs()
+```
+
+Quantification of embryo physiology, position and shape is primarily performed during the quantifyAllEmbryos function which by default incorporates parallel processing. The process is partly species-dependant. For example 'rbalthica' is very mobile within its egg capsule and its size, shape and position can be quantified precisely. However, 'ogammarellus' fills its egg capsule and therefore some comparable measures are not posible. The blockwise frequency function however is the same and this underpins much of the downstream processes including quantificaiton of physiological rates and quantification of embryo health, among other measures. 
+
+```
+analysis.savePhenomeMeasuresForAllEmbryos('pathToSave')
+
+
+
 analysis.quantifyAllEmbryos()
 analysis.savePhenomeMeasuresForAllEmbryos('path’)
 
