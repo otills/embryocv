@@ -6,10 +6,6 @@
 <img src="assets/singleRadix_FF.gif" align = "right" width="270" height = "180"/>
 EmbryoCV is a Python package developed by a team of scientists to quantify different biological aspects of developing organisms from video datasets. It forms part of the embryo-phenomics platform www.embryophenomics.org - a combination of open-source hardware and software for high-throughput and high-resolution quantification of aquatic embryos. 
 
-["Gooogle"](http://www.google.com)
-(https://www.google.com "google")
-["OpenVIM"](http://www.openvim.org)
-["OpenVIM"](https://www.openvim.org)
 
 The package EmbryoCV was developed to analyse the large long-term image datasets acquired using [OpenVIM](http://www.openVIM.org "OpenVIM homepage"), the hardware component of the embryo-phenomics platform [embryo-phenomics](http://www.embryophenomics.org "Embryo-phenomics homepage"). OpenVIM can generate high quality long-term video datasets of large numbers of aquatic embryos for extended periods of time. Consequently OpenVIM is a powerful tool for visualising and quanitfying the dynamic period of embryonic development in a way that is simply not possible with manual observation. 
 
@@ -25,12 +21,12 @@ Biological development is complex and dynamic and EmbryoCV has been designed to 
 
 EmbryoCV attempts to extract data on embryo size, shape, position and physiology from every frame for every embryo and these measures are integrated to form a multi-dimensional biologicaly relevant dataset.
 
-* Size
-* Shape
-* Position
-* Function
-* Movement rates
-* Physiological rates 
+  * Size
+  * Shape
+  * Position
+  * Function
+  * Movement rates
+  * Physiological rates 
 
 <img src="assets/datasetStructure.png" align = "right" width="350"/>
 
@@ -42,14 +38,8 @@ EmbryoCV is intentionally simple to use, consisting of a small number of user ca
 ..
 ..
 
-Python is platform independant and so EmbryoCV, although only tested on MacOS, should run on any system given that Python is supported on Windows and Linux. EmbryoCV has a number of dependencies including OpenCV (image analysis), Pandas (data storage and processing), Numpy (numerical), SciKit (various), XArray (high-dimensional data storage), Matplotlib (visualisation), pyqtgraph (UI). EmbryoCV has been designed to run interactively using IPython - allowing users to dynamically query the outputs of particular functions during their analysis. More detailed information on setting up EmbryoCV on your system is available here. If users encounter issues they are encouraged to use the Google Group [embryo-phenomics Google Group](http://groups.google.com/forum/#!forum/embryo-phenomics "Embryo-phenomics user group")
+Python is platform independant and so EmbryoCV, although only tested on MacOS, should run on any system. EmbryoCV has a number of dependencies including OpenCV (image analysis), Pandas (data storage and processing), Numpy (numerical), SciKit (various), XArray (high-dimensional data storage), Matplotlib (visualisation), pyqtgraph (UI). EmbryoCV has been designed to run interactively using IPython - allowing users to dynamically query the outputs of particular functions during their analysis. More detailed information on setting up EmbryoCV on your system is available here. If users encounter issues they are encouraged to use the Google Group [embryo-phenomics Google Group](http://groups.google.com/forum/#!forum/embryo-phenomics "Embryo-phenomics user group")
 
-
-
-
-
-
-### How do I use EmbryoCV?
 
 
 
