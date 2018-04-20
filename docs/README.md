@@ -75,6 +75,11 @@ In addition to a change in the results files format and structure, this stage ``
 
 From this stage onwards EmbryoCV sees more focussed analyses targeted at quantifying particular traits or responses such as heart rate or classification of lethal end points. 
 
+To quantify heart rate, the following scripts can be used. Output for all embryos is stored in a .npy file at the location savePath, together with a PDF summary for each embryo describing the model fitting. The ontogeny of heart function in Radix balthica follows a segmented relationship and consequently a segmented model is fitted, whereas for Orchestia gammarellus a linear model is used. 
+
+<img src="assets/radixbalthicaHR.png" align = "right" width="300"/>
+
+
 ``` 
 analysis.measureHeartRateForAllEmbryos(savePath)
 analysis.measureHeartRateForSpecificEmbryos(embryos,savePath)
