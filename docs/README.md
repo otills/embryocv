@@ -61,7 +61,7 @@ analysis.validateEggs()
 
 Quantification of embryo physiology, position and shape is primarily performed during the quantifyAllEmbryos function which by default incorporates parallel processing. The process is partly species-dependant. For example 'rbalthica' is very mobile within its egg capsule and its size, shape and position can be quantified precisely. However, 'ogammarellus' fills its egg capsule and therefore some comparable measures are not posible. The blockwise frequency function however is the same (see figure) and this underpins much of the downstream processes including quantificaiton of physiological rates and quantification of embryo health, among other measures. 
 
-<img src="assets/blockwise.png" align = "right" width = 350/>
+<img src="assets/blockwise.png" align = "right" width = "350"/>
 
 ```
 analysis.quantifyAllEmbryos()
