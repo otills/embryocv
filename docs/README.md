@@ -1,3 +1,7 @@
+<p align="center">
+<img src="EmbryoCVLogo.png" width="800"/>
+<h3 align="center">Python software for high-throughput quantification of developing aquatic embryos</h1>
+</p>
 
 # EmbryoCV
 
