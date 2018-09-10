@@ -1,5 +1,5 @@
 <p align="center">
-<img src="assets/EmbryoCVLogo.png" width="800"/>
+<img src="assets/EmbryoCVLogo.png" width="600"/>
 <h3 align="center">Python software for high-throughput quantification of developing aquatic embryos</h1>
 </p>
 
@@ -8,10 +8,10 @@
 ### What is EmbryoCV?
 
 <img src="assets/singleRadix_FF.gif" align = "right" width="270" height = "180"/>
-EmbryoCV is a Python package developed by a team of scientists to quantify different biological aspects of developing organisms from video datasets. It forms part of the embryo-phenomics platform www.embryophenomics.org - a combination of open-source hardware and software for high-throughput and high-resolution quantification of aquatic embryos. 
+EmbryoCV is an open-source Python package developed by a team of scientists to quantify different biological aspects of developing organisms from video datasets. It forms part of the embryo-phenomics platform www.embryophenomics.org - a combination of open-source hardware and software for high-throughput and high-resolution quantification of aquatic embryos. 
 
 
-The package EmbryoCV was developed to analyse the large long-term image datasets acquired using [OpenVIM](http://www.openVIM.org "OpenVIM homepage"), the hardware component of the embryo-phenomics platform [embryo-phenomics](http://www.embryophenomics.org "Embryo-phenomics homepage"). OpenVIM can generate high quality long-term video datasets of large numbers of aquatic embryos for extended periods of time. Consequently OpenVIM is a powerful tool for visualising and quanitfying the dynamic period of embryonic development in a way that is simply not possible with manual observation. 
+The package EmbryoCV was developed to analyse the large volume and long-term image datasets acquired using [OpenVIM](http://www.openVIM.org "OpenVIM homepage"), the hardware component of the [EmbryoPhenomics platform](http://www.embryophenomics.org "Embryo-phenomics homepage"). OpenVIM can generate high quality long-term video datasets of large numbers of aquatic embryos for extended periods of time. Consequently OpenVIM is a powerful tool for visualising and quanitfying the dynamic period of embryonic development in a way that is simply not possible with manual observation. 
 
 
 However, the downside of this capability is the generation of vast quantities of video data and the extremely time consuming nature of manual analysis. It therefore becomes necessary to quanitfy only particular aspects of biological development, or to limit the scale of experiments for methodological, rather than biological reasons. EmbryoCV is the solution to this issue. It provides a high-throughput pipeline for measuring phenome-level responses of aquatic embryos with unprecedented temporal, spatial and functional resolution.
