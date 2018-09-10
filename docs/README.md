@@ -1,5 +1,5 @@
 <p align="center">
-<img src="assets/EmbryoCVLogo.png" width="600"/>
+<img src="assets/EmbryoCVLogo.png" width="400"/>
 <h3 align="center">Python software for high-throughput quantification of developing aquatic embryos</h1>
 </p>
 
