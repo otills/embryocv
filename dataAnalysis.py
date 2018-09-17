@@ -265,14 +265,27 @@ class dataAnalysis(object):
                 res = mod.fit()
             # Get predicted HR values
             # predictedHRs = res.predict(np.arange(24))
-            predictedHRs = self.res.predict(pd.DataFrame(data = np.arange(24), columns = ['Ind']))
+            predictedHRs = res.predict(pd.DataFrame(data = np.arange(24), columns = ['Ind']))
             # Get intercept and gradient
-            plt.figure()
             p = mod.fit().params
             print 'Intercept: ' + str(p[0]) + '; Slope: ' + str(p[1])
-            plt.plot(df.ix[:,'Ind'],df.ix[:,'HR'],'o')
-            plt.plot(df.ix[:,'Ind'], p[0] + p[1] * df.ix[:,'Ind'],color='black')
+                        # Show fit
+            fig, ax = plt.subplots(1,1)
+            plt.title(str(self.embryo))
+            plt.xlabel('Time point')
+            plt.ylabel('Frequency (Hz)')
+            ax.plot(df.ix[:,'Ind'],df.ix[:,'HR'],'o')
+            ax.plot(df.ix[:,'Ind'], p[0] + p[1] * df.ix[:,'Ind'],color='black')
             plt.ylim(0,df.ix[:,'HR'].max()*1.2)
+            fig.subplots_adjust(bottom=0.3)
+            lab = str('Intercept: ') + str(p[0]) + '; Slope: ' + str(p[1])
+            fig.text(.1,.1,lab)
+            #fig.canvas.manager.window.raise_()
+            pdf_pages = PdfPages(savePath + self.embryo + '_heartModelSummary.pdf')
+            pdf_pages.savefig(fig)
+            pdf_pages.close()
+            plt.plot()
+
             
             zip(np.arange(0, len(self.results['dateTime'].values[23:])),self.results['dateTime'].values,self.results['Metadata'].to_pandas().ix[23:,0,'currentFolder'],HRs[23:],predictedHRs)
             
@@ -319,7 +332,6 @@ class dataAnalysis(object):
                 self.test = hrvals
             #try:
             self.predHR, self.predBP, self.BP, self.S1,self.S2,self.startTime,self.endTime,self.firstHR,self.lastHR,self.HRData,self.outputSummary = self.segReg_radix(hrvals,segRegfiltXVal,segRegfiltYVal)
-            print 'making it to here'
             # Show fit
             fig, ax = plt.subplots(1,1)
             ax.plot(self.predHR)
@@ -338,7 +350,6 @@ class dataAnalysis(object):
             pdf_pages.savefig(fig)
             pdf_pages.close()
             plt.plot()
-            print 'plotting is ok'
             #time.sleep(0.2)
             # Add data to a dict - new key for each embryo
             self.heartRate_data[str(self.embryo)] = {'Embryo': self.embryo,'PredHR':self.predHR, 
@@ -542,8 +553,8 @@ class dataAnalysis(object):
 
     def identifyLethalEndPoints(self, savePath, developmentalStage):
         """ 
-        Identify lethal end points. Currently optimised and tested for three
-        developmental stages of Radix balthica, employing different strategies
+        Identify lethal end points. Currently optimised for 24 h exposure (3 recordings/hour) and tested for three
+        developmental stages of Radix balthica (E3 = trochophore, E7 = mid-hippo and E11 = late hippo), employing different strategies
         for each (drops in frequency energy, peaks in size indicative of a 
         failure in osmotic control and a combination of both).
         """
@@ -703,5 +714,3 @@ class dataAnalysis(object):
             print(values)
         np.save(savePath + '/lethalEndPoints.npy', self.lethalEndPoint_data)
             
-        
-    
