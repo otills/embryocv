@@ -8,7 +8,7 @@
 ### What is EmbryoCV?
 
 <img src="assets/singleRadix_FF.gif" align = "right" width="270" height = "180"/>
-EmbryoCV is an open-source Python package developed by a team of scientists to quantify different aspects of developing organisms from video datasets. EmbryoCV forms the software component of the (EmbryoPhenomics platform)[http://www.embryophenomics.org] - a combination of open-source hardware (OpenVIM)[http://www.openvim.org] and software for high-throughput and high-resolution quantification of aquatic embryos. 
+EmbryoCV is an open-source Python package developed by a team of scientists to quantify different aspects of developing organisms from video datasets. EmbryoCV forms the software component of the [EmbryoPhenomics platform](http://www.embryophenomics.org) - a combination of open-source hardware [OpenVIM](http://www.openvim.org) and software for high-throughput and high-resolution quantification of aquatic embryos. 
 
 
 EmbryoCV was developed to analyse the large volume and long-term image datasets acquired using [OpenVIM](http://www.openVIM.org), the hardware component of the [EmbryoPhenomics platform](http://www.embryophenomics.org). OpenVIM can generate high quality long-term video datasets of large numbers of aquatic embryos for extended periods of time. Consequently, OpenVIM is a powerful tool for visualising and quanitfying the dynamic period of embryonic development in a way that is simply not possible without automated long-term observation.
