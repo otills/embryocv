@@ -40,7 +40,7 @@ The final output of EmbryoCV is an XArray HDF5 dataset for each embryo. This is 
 ### How do I use EmbryoCV?
 Python is platform independant and so EmbryoCV, although only tested on MacOS, should run on any system. EmbryoCV has a number of dependencies including OpenCV (image analysis), Pandas (data storage and processing), Numpy (numerical), SciKit (various), XArray (high-dimensional data storage), Matplotlib (visualisation), pyqtgraph (UI). EmbryoCV has been designed to run interactively using IPython - allowing users to dynamically query the outputs of particular functions during their analysis. More detailed information on setting up EmbryoCV on your system is available in the readme.txt within the EmbryoCV program folder on the Github repository. Following these commands and using the setup.py script will allow the installation of EmbryoCV.
 
-If users encounter issues they are encouraged to use the Google Group [embryo-phenomics Google Group](http://groups.google.com/forum/#!forum/embryo-phenomics "Embryo-phenomics user group")
+If users encounter issues they are encouraged to use the Google Group [EmbryoPhenomics Google Group](http://groups.google.com/forum/#!forum/embryo-phenomics "EmbryoPhenomics user group")
 
 EmbryoCV is intentionally simple to use, consisting of a small number of user callable functions. It has been developed to work with Micro-Manager datasets acquired as multiple image sequences of a number of embryos acquired over prolonged periods. The acquisition of such an image dataset is easily acheived using MicroManager and the process is described on the [OpenVIM](http://www.openVIM.org "OpenVIM homepage") site. 
 
