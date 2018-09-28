@@ -97,7 +97,7 @@ analysis.measureHeartRateForSpecificEmbryos(embryos,savePath)
 
 
 ### How is EmbryoCV structured?
-EmbryoCV has a modular internal structure, consisting of the modules dataHandling, imageAnalysis, eggUI, dataIntegration, dataAnalysis and the parent module EmbryoCV. However, this complexity is irrelevant to users unless they are looking to customise or develop EmbryoCV [More detailed information on the structure of EmbryoCV](programStructure.md).
+EmbryoCV has a modular internal structure, consisting of the modules dataHandling, imageAnalysis, eggUI, dataIntegration, dataAnalysis and the parent module EmbryoCV. However, this complexity is irrelevant to users unless they are looking to customise or develop EmbryoCV.
 
 
 
