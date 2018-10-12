@@ -716,3 +716,18 @@ class dataAnalysis(object):
             
         
     
+#==============================================================================
+#   Plot a multipanel of blockwise data, of specific timepoint and resolution.
+#==============================================================================    
+    def plotEmbryoOutlineXR(self, timePoint):
+        #t = 20     
+        #b = 3
+        em = self.results['EmbryoOutline'].loc[timePoint,:].values.astype(np.int)
+        #em = self.results['EmbryoOutline'].loc[timePoint,:,'embryoOutline']
+        outtmp = np.zeros((len(em),1000,1000))
+        for g in range(outtmp.shape[0]):
+            #out = cv2.ellipse(np.zeros_like(twentyFPS.tmp[g]),formattedRotBBox,(255,255,255),-1)
+            cv2.drawContours(image = outtmp[g], contours = [np.array(em[g].T)[np.array(em[g].T)[:,0] !=0,:]], contourIdx = -1, color = (255, 255,255), thickness = 2)
+            #twentyFPS.seq[g] = cv2.bitwise_and(twentyFPS.seq[g], out)
+        pg.image(outtmp)
+        
